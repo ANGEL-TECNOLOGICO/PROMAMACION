@@ -1,0 +1,54 @@
+<html>
+<head>PROCESOS Y MULTIPROGRAMACION
+<title>                                
+</title>
+</head>
+
+<body bgcolor="black" text="green"> <p>una informacion vrebe (introduccion):</p>
+   <p>en este tipo de pagina se mostrara informacion como los proceso    que en mi opinion     son una serie de pasos para lograr un objetivo      deseado y una orma de poder decirle a alguien mas como se puede hacer    algo.</p>
+<p>Por consecuente la multi programacion es un tipo de proceso en donde se involucran varios procesos en un solo apartado u objetivo.</p>
+
+<img src="https://4938161a-a-62cb3a1a-s-sites.googlegroups.com/site/tallerdesistemaoperativosll/unidad-i/1-2-procesos-y-multiprogramacion/images.jpg?attachauth=ANoY7cp93w12O0tUs-1A4RokRlVxklP-nxwEcAK8ykoasAUWrNdcqmBaqkfDoGWyCkwF79wBjII-biCe1549gb9_63CxC3BKObO0IbeL4omg5h8ysB7X7L15D9V6kAoL_IewRtgzBHQPlu3QSrYnUFTlarzBm5SW3Sxwtem8lj1KDx3i9aFwTDlCvBZbpRpLQ1LYze96XlsX4to0SICgRAGAUgFAcihmZ1lC-f7xPmJ7KDJnjykfILnhYaVErEX4c-b6XUwrYofo2ZrsGpRgIvzqC0pOoIUlLDluzb9-rpfk2yP-wioDuIs%3D&attredirects=0" alt="logo de sistemas" title="imagen de ejecusion de procesos" width="300" height="200"/>
+<p>La programación es una técnica de multiplexación que permite la ejecución simultánea de múltiples procesos en un único procesador. En realidad, esta técnica produce una ilusión de paralelismo, de manera que parece que todos los procesos se están ejecutando a la vez. Sin embargo, hay un único proceso ejecutándose en el procesador a la vez.
+Un método para la multiprogramación es el Foreground/Background (o ejecución jerarquizada) (usado en sistemas por tandas, nunca en interactivos), en él hay un proceso prioritario (el foreground (FG)) que se ejecuta con preferencia de todos los demás, cuando este proceso solicita una operación L/E(Lectura/Escritura), mientras el s.o. la realiza, el proceso FG estará bloqueado por esta operación y le cede el control al proceso background 1 (BG), y si éste realiza una operación L/E, al BG2,… Cuando uno de los procesos bloqueados se desbloquea, recibe el control del procesador. Para que este método funcione de forma óptima la mejor forma es colocar los procesos ordenados de mayor a menor cantidad de operaciones L/E.</p>
+<img src="https://thumbs.dreamstime.com/z/sistema-de-proceso-digital-computacional-del-icono-del-vector-de-la-tecnolog%C3%ADa-de-la-informaci%C3%B3n-de-los-datos-de-la-base-de-76121570.jpg" alt="este es un sistema de multiprogramacion" title="este es un sistema de multiprogramacion" width="300" height="200"/>
+<p>Procesos
+Uno de los módulos más importantes de un sistema operativo es la de administrar los procesos y tareas del sistema de cómputo. En esta sección se revisarán dos temas que componen o conciernen a este módulo: la planificación del procesador y los problemas de concurrencia.
+ Planificación del procesador</p>
+ <p>La planificación del procesador se refiere a la manera o técnicas que se usan para decidir cuánto tiempo de ejecución y cuando se le asignan a cada proceso del sistema. Obviamente, si el sistema es monousuario y monotarea no hay mucho que decidir, pero en el resto de los sistemas esto es crucial para el buen funcionamiento del sistema.</p>
+  
+<p>Niveles de planificación</p>
+  
+<p>En los sistemas de planificación generalmente se identifican tres niveles: el alto, em medio y el bajo. El nivel alto decide que trabajos (conjunto de procesos) son candidatos a convertirse en procesos compitiendo por los recursos del sistema; el nivel intermedio decide que procesos se suspenden o reanudan para lograr ciertas metas de rendimiento mientras que el planificador de bajo nivel es el que decide qué proceso, de los que ya están listos (y que en algún momento paso por los otros dos planificadores) es al que le toca ahora estar ejecutándose en la unidad central de procesamiento. En este trabajo se revisarán principalmente los planificadores de bajo nivel porque son los que finalmente eligen al proceso en ejecución.</p>
+ <p>Objetivos de la planificación</p>
+<p>Una estrategia de planificación debe buscar que los procesos obtengan sus turnos de ejecución apropiadamente, juntamente con un buen rendimiento y minimización de la sobrecarga (overhead) del planificador mismo. En general, se buscan cinco objetivos principales:</p>
+1.	
+ <p>justicia o Imparcialidad: Todos los procesos son tratados de la misma forma, y en algún momento obtienen su turno de ejecución o intervalos de tiempo de ejecución hasta su terminación exitosa.</p>
+2.	
+<p>Maximizar la Producción: El sistema debe de finalizar el mayor número de procesos en por unidad de tiempo.</p>
+3.	
+<p>Maximizar el Tiempo de Respuesta: Cada usuario o proceso debe observar que el sistema les responde consistentemente a sus requerimientos.</p>
+4.	
+<p>Evitar el aplazamiento indefinido: Los procesos deben terminar en un plazo finito de tiempo.</p>
+5.	
+<p>El sistema debe ser predecible: Ante cargas de trabajo ligeras el sistema debe responder rápido y con cargas pesadas debe ir degradándose paulatinamente. Otro punto de vista de esto es que, si se ejecuta el mismo proceso en cargas similares de todo el sistema, la respuesta en todos los casos debe ser similar.</p>
+ <p>Características para considerar de los procesos
+ No todos los equipos de cómputo procesan el mismo tipo de trabajos, y un algoritmo de planificación que en un sistema funciona excelente puede dar un rendimiento pésimo en otro cuyos procesos tienen características diferentes.</p> 
+<p>Estas características pueden ser:</p>
+•	
+<p>Cantidad de Entrada/Salida: Existen procesos que realizan una gran cantidad de operaciones de entrada y salida (aplicaciones de bases de datos, por ejemplo).</p>
+•	
+<p>Cantidad de Uso de CPU: Existen procesos que no realizan muchas operaciones de entrada y salida, sino que usan intensivamente la unidad central de procesamiento. Por ejemplo, operaciones con matrices.</p> 
+•	
+<p>Procesos de Lote o Interactivos: Un proceso de lote es más eficiente en cuanto a la lectura de datos, ya que generalmente lo hace de archivos, mientras que un programa interactivo espera mucho tiempo (no es lo mismo el tiempo de lectura de un archivo que la velocidad en que una persona teclea datos) por las respuestas de los usuarios.</p>
+•	
+<p>Procesos en Tiempo Real: Si los procesos deben dar respuesta en tiempo real se requiere que tengan prioridad para los turnos de ejecución.</p>
+•	
+<p>Longevidad de los Procesos: Existen procesos que típicamente requerirán varias horas para finalizar su labor, mientras que existen otros que solo necesitan algunos segundos.</p>
+<P>BIBLIOGRAFIAS:</P>
+<p>(s.f.). Obtenido de </p>
+https://sites.google.com/site/tallerdesistemaoperativosll/unidad-i/1-2-procesos-y-multiprogramacion</p>
+<p>(s.f.). Obtenido de</p> https://sites.google.com/site/isctallerdesistemasoperativos1/unidad-1---introduccion-a-los-</p>
+<p>(s.f.). Obtenido de</p> http://informacionsistemasoperativos.blogspot.com/p/sistemas-operativos-y-gestion-de.html</p>
+</body>
+</html>
